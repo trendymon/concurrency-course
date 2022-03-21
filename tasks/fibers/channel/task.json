@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "targets": ["tests"],
+      "profiles": ["Debug", "FaultyThreadsASan", "FaultyThreadsTSan"]
+    }
+  ],
+  "lint_files": ["mtf"],
+  "submit_files": ["mtf"],
+  "forbidden_patterns": [
+    "sleep_for",
+    ".SubmitContinuation",
+    "->SubmitContinuation"
+  ]
+}

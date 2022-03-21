@@ -1,0 +1,6 @@
+begin_task()
+task_link_libraries(asio)
+add_task_library(mtf)
+add_task_test_dir(tests)
+add_playground(play)
+end_task()
