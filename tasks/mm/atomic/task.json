@@ -1,0 +1,7 @@
+{
+  "test_profiles": ["Debug"],
+  "test_targets": ["unit_tests", "stress_tests"],
+  "lint_files": ["spinlock.hpp", "atomic.cpp"],
+  "submit_files": ["atomic_ops.S", "spinlock.hpp"],
+  "forbidden_patterns": ["Your asm code goes here", "Solution starts here"]
+}

@@ -1,0 +1,5 @@
+begin_task()
+task_link_libraries(tinyfibers)
+set_task_sources(tricky_lock.hpp)
+add_task_test(test test.cpp)
+end_task()

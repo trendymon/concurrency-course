@@ -1,0 +1,6 @@
+{
+  "test_profiles": ["Debug"],
+  "test_targets": ["tests"],
+  "submit_files": ["deep_thought.hpp"],
+  "lint_files": ["deep_thought.hpp"]
+}

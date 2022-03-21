@@ -1,0 +1,7 @@
+{
+  "test_profiles": ["FaultyFibers", "Debug", "FaultyThreadsASan", "FaultyThreadsTSan"],
+  "test_targets": ["unit_tests", "stress_tests"],
+  "submit_files": ["mutex.hpp"],
+  "lint_files": ["mutex.hpp"],
+  "forbidden_patterns": ["std::mutex", "sleep"]
+}

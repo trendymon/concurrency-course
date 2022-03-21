@@ -1,0 +1,17 @@
+{
+  "test_profiles": [
+    "FaultyFibers",
+    "Debug",
+    "FaultyThreadsTSan"
+  ],
+  "test_targets": ["stress_tests"],
+  "lint_files": [
+    "table.cpp",
+    "table.hpp",
+    "philosopher.hpp",
+    "philosopher.cpp"
+  ],
+  "submit_files": [
+    "philosopher.cpp"
+  ]
+}

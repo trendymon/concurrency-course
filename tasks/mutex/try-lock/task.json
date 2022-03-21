@@ -1,0 +1,7 @@
+{
+  "test_profiles": ["Debug", "FaultyFibers", "FaultyThreadsASan", "FaultyThreadsTSan"],
+  "test_targets": ["unit_tests", "stress_tests"],
+  "lint_files": ["ticket_lock.hpp"],
+  "submit_files": ["ticket_lock.hpp"],
+  "forbidden_patterns": ["To be implemented"]
+}

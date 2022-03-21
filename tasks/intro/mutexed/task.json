@@ -1,0 +1,9 @@
+{
+  "test_profiles": ["Debug", "FaultyThreadsTSan"],
+  "test_targets": ["unit_tests", "stress_tests"],
+  "submit_files": ["guarded.hpp"],
+  "lint_files": ["guarded.hpp"],
+  "forbidden_patterns": [
+    "unlock"
+  ]
+}

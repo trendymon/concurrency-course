@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.5)
+
+begin_task()
+set_task_sources(mutexed.hpp)
+add_task_test(unit_tests tests/unit.cpp)
+add_task_test(stress_tests tests/stress.cpp)
+end_task()

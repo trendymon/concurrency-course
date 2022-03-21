@@ -1,0 +1,7 @@
+{
+  "test_profiles": ["Debug"],
+  "test_targets": ["test"],
+  "lint_files": ["test.cpp"],
+  "submit_files": ["test.cpp"],
+  "forbidden_patterns": ["Put Yield-s to produce livelock"]
+}
