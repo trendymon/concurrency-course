@@ -1,0 +1,9 @@
+{
+  "test_profiles": ["Debug", "FaultyFibers", "FaultyThreadsASan", "FaultyThreadsTSan"],
+  "test_targets": ["unit_tests", "stress_tests"],
+  "lint_files": ["semaphore.hpp", "blocking_queue.hpp"],
+  "submit_files": ["semaphore.hpp", "blocking_queue.hpp"],
+  "forbidden_patterns": [
+    "atomic", "yield", "sleep_for", "SpinWait"
+  ]
+}

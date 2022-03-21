@@ -1,0 +1,9 @@
+{
+  "test_profiles": ["Debug", "FaultyFibers", "FaultyThreadsASan", "FaultyThreadsTSan"],
+  "test_targets": ["unit_tests", "stress_tests"],
+  "lint_files": ["condvar.hpp"],
+  "submit_files": ["condvar.hpp"],
+  "forbidden_patterns": [
+    "condition_variable", "yield", "sleep_for", "SpinWait"
+  ]
+}

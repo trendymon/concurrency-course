@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "targets": ["unit_tests"],
+      "profiles": ["Debug"]
+    },
+    {
+      "targets": ["stress_tests"],
+      "profiles": ["Debug", "FaultyFibers", "FaultyThreadsASan", "FaultyThreadsTSan"]
+    }
+  ],	  
+  "lint_files": ["tp"],
+  "submit_files": ["tp"],
+  "forbidden_patterns": [
+    "yield", "sleep_for", "SpinWait"
+  ]
+}

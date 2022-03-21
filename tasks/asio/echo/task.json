@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "targets": ["tests"],
+      "profiles": ["Debug"]
+    }
+  ],
+  "lint_files": ["echo"],
+  "submit_files": [
+    "echo"
+  ],
+  "forbidden_patterns": []
+}
