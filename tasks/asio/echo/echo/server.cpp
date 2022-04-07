@@ -25,22 +25,23 @@ class Session : public std::enable_shared_from_this<Session> {
 
  private:
   void ReadChunk() {
-    auto self = shared_from_this();
     socket_.async_read_some(
         asio::buffer(buffer_, kBufferSize),
-        [this, self](std::error_code error_code, std::size_t bytes_read) {
+        [self = shared_from_this()](std::error_code error_code, std::size_t bytes_read) {
           if (!error_code) {
-            WriteChunk(bytes_read);
+            self->WriteChunk(bytes_read);
           }
         });
   }
 
   void WriteChunk(size_t bytes) {
-    auto self = shared_from_this();
     asio::async_write(
         socket_, asio::buffer(buffer_, bytes),
-        [self](std::error_code /*error_code*/, std::size_t /*bytes*/) {
+        [self = shared_from_this()](std::error_code error_code, std::size_t /*bytes*/) {
           // Write completed!
+          if (!error_code) {
+            self->ReadChunk();
+          }
         });
   }
 
@@ -61,11 +62,13 @@ class Server {
 
  private:
   void AcceptClient() {
-    acceptor_.async_accept([](std::error_code error_code, tcp::socket client) {
-      if (!error_code) {
-        std::make_shared<Session>(std::move(client))->Start();
-      }
-    });
+    acceptor_.async_accept(
+        [this](std::error_code error_code, tcp::socket client) {
+          if (!error_code) {
+            std::make_shared<Session>(std::move(client))->Start();
+          }
+          AcceptClient();
+        });
   }
 
  private:
